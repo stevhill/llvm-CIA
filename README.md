@@ -18,7 +18,7 @@ information, refer to the paper
 
 * Profile your program using Clang profiling via instrumentation:
 
-  http://clang.llvm.org/docs/UsersManual.html#profiling-with-instrumentation
+  https://clang.llvm.org/docs/UsersManual.html#profiling-with-instrumentation
 
   Follow steps 1, 2 and 3 of the above guide. Once you have obtained
   the profile data, generate the llvm assembly of the source files by
@@ -40,10 +40,10 @@ information, refer to the paper
 The test directory contains an example program, the HadamardSAD8x8
 routine extracted from the H264 reference code. You can test
 llvm-CIA with it as follows:
-
-  cd test  
-  make run
-
+```
+cd test
+make run
+```
 The run target generates gv graphs for all basic blocks in the
 example.
 
@@ -60,5 +60,5 @@ frequency|int|Graph
 
 # AUTHORS
 
-Anadi Mishra  
+Anadi Mishra
 Emanuele Giaquinta
