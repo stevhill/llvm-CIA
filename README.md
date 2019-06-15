@@ -10,9 +10,9 @@ information, refer to the paper
 # Installation
 
 1. Install LLVM and Clang version 3.8 or later
-2. Bootstrap llvm-CIA using the bootstrap.sh script. You can
-   optionally provide the path to the installed LLVM cmake directory
-   as an argument, in case it is not known to cmake.
+2. Build llvm-CIA using the build.sh script. You can optionally
+   provide the path to the installed LLVM cmake directory as an
+   argument, in case it is not known to cmake.
 
 # Usage
 

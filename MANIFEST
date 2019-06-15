@@ -2,7 +2,7 @@ CMakeLists.txt
 Makefile
 MANIFEST
 README.md
-bootstrap.sh
+build.sh
 bootstrap-llvm.sh
 bb-printer.sh
 BBPrinter/CMakeLists.txt
