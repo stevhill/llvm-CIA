@@ -60,5 +60,5 @@ frequency|int|Graph
 
 # AUTHORS
 
-Anadi Mishra
+Anadi Mishra  
 Emanuele Giaquinta
