@@ -1,1 +1,1 @@
-add_llvm_loadable_module(LLVMBBPrinter BBPrinter.cpp)
+add_llvm_library(LLVMBBPrinter MODULE BBPrinter.cpp)
