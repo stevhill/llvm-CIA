@@ -8,18 +8,21 @@ shift
 mkdir "$1"
 cd "$1"
 
-curl -O http://releases.llvm.org/$version/llvm-$version.src.tar.xz
-curl -O http://releases.llvm.org/$version/cfe-$version.src.tar.xz
-curl -O http://releases.llvm.org/$version/compiler-rt-$version.src.tar.xz
+curl -L -O https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
+curl -L -O https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/clang-$version.src.tar.xz
+curl -L -O https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/compiler-rt-$version.src.tar.xz
 
 tar xf llvm-$version.src.tar.xz
-tar xf cfe-$version.src.tar.xz
+tar xf clang-$version.src.tar.xz
 tar xf compiler-rt-$version.src.tar.xz
-mv cfe-$version.src llvm-$version.src/tools/clang
-mv compiler-rt-$version.src llvm-$version.src/projects/compiler-rt
 
+cmake_args=(
+    -DCMAKE_BUILD_TYPE=Debug
+    -DLLVM_EXTERNAL_CLANG_SOURCE_DIR="$PWD"/clang-$version.src
+    -DLLVM_EXTERNAL_COMPILER_RT_SOURCE_DIR="$PWD"/compiler-rt-$version.src
+)
 mkdir llvm-$version.src/build
 cd llvm-$version.src/build
-cmake -DCMAKE_BUILD_TYPE=Debug ..
+cmake "${cmake_args[@]}" ..
 cmake --build . -- -j 4
 cmake -DCMAKE_INSTALL_PREFIX=$HOME/llvm-$version -P cmake_install.cmake
