@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
+project(llvm-CIA)
 set(CMAKE_CXX_STANDARD 11)
 
 find_package(LLVM REQUIRED CONFIG)
