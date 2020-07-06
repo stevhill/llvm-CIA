@@ -2,10 +2,10 @@
 
 set -ex
 
-realpath () {
-    # reimplementation of "readlink -fv" for darwin
-    python -c "import os.path, sys; print os.path.realpath(sys.argv[1])" "$1"
-}
+root=$(
+    cd "$(dirname "$0")" &&
+    pwd -P
+)
 
 case $(uname -s) in
     Darwin)
@@ -16,7 +16,6 @@ case $(uname -s) in
         ;;
 esac
 
-root="$(dirname "$(realpath "$0")")"
 for file ; do
     opt -load "$root"/build/BBPrinter/LLVMBBPrinter.$ext -bbprinter -o /dev/null "$file"
 done
