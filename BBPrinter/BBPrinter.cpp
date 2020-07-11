@@ -1,9 +1,6 @@
 // print dfg information for custom instruction identification
 
-#define DEBUG_TYPE "BBPrinter"
-
 #include "llvm/Analysis/BlockFrequencyInfo.h"
-#include "llvm/Analysis/ScalarEvolutionExpressions.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/Module.h"
 #include "llvm/Support/raw_ostream.h"
