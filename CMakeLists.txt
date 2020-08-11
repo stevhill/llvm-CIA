@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 project(llvm-CIA)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 find_package(LLVM REQUIRED CONFIG)
 list(APPEND  CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
