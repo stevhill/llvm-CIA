@@ -17,6 +17,6 @@ case $(uname -s) in
 esac
 
 for file ; do
-    opt -load "$root"/build/BBPrinter/LLVMBBPrinter.$ext -bbprinter -o /dev/null "$file"
+    opt -load-pass-plugin "$root"/build/BBPrinter/LLVMBBPrinter.$ext -passes=bbprinter -disable-output "$file"
 done
 #dot -O -Tpdf *.gv

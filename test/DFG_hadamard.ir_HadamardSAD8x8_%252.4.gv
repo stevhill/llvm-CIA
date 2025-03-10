@@ -1,0 +1,15 @@
+digraph "hadamard.ir_HadamardSAD8x8_%252.4" {
+frequency = 1.000000
+N0_call [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N1_add [weight = 1, forbidden = 0]
+N2_ashr [weight = 1, forbidden = 0]
+N3_call [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N4_ret [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N0_call -> N1_add [color = red];
+N1_add -> N2_ashr;
+N2_ashr -> N4_ret;
+ExtIn0_add[style = filled, fillcolor = blue]
+ExtIn0_add -> N0_add [color = blue];
+ExtIn1_bitcast[style = filled, fillcolor = blue]
+ExtIn1_bitcast -> N3_bitcast [color = blue];
+}

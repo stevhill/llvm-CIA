@@ -1,0 +1,160 @@
+Performing C SOURCE FILE Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_79b9d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_79b9d.dir/build.make CMakeFiles/cmTC_79b9d.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_79b9d.dir/src.c.o
+/usr/bin/cc -DC_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -Werror=date-time    -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_79b9d.dir/src.c.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.c
+cc1: error: '-Werror=unguarded-availability-new': no option '-Wunguarded-availability-new'
+gmake[1]: *** [CMakeFiles/cmTC_79b9d.dir/build.make:78: CMakeFiles/cmTC_79b9d.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_79b9d/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a9df8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a9df8.dir/build.make CMakeFiles/cmTC_a9df8.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a9df8.dir/src.cxx.o
+/usr/bin/c++ -DCXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time    -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_a9df8.dir/src.cxx.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: '-Werror=unguarded-availability-new': no option '-Wunguarded-availability-new'
+gmake[1]: *** [CMakeFiles/cmTC_a9df8.dir/build.make:78: CMakeFiles/cmTC_a9df8.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_a9df8/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b7407/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b7407.dir/build.make CMakeFiles/cmTC_b7407.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b7407.dir/src.c.o
+/usr/bin/cc -DC_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -Wimplicit-fallthrough    -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_b7407.dir/src.c.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command-line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
+gmake[1]: *** [CMakeFiles/cmTC_b7407.dir/build.make:78: CMakeFiles/cmTC_b7407.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b7407/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5b1bf/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5b1bf.dir/build.make CMakeFiles/cmTC_5b1bf.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5b1bf.dir/src.cxx.o
+/usr/bin/c++ -DCXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough    -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_5b1bf.dir/src.cxx.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
+gmake[1]: *** [CMakeFiles/cmTC_5b1bf.dir/build.make:78: CMakeFiles/cmTC_5b1bf.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_5b1bf/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e5ba2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e5ba2.dir/build.make CMakeFiles/cmTC_e5ba2.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e5ba2.dir/src.cxx.o
+/usr/bin/c++ -DCXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type  -Werror=non-virtual-dtor -o CMakeFiles/cmTC_e5ba2.dir/src.cxx.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.cxx
+/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.cxx:2:36: error: ‘class base’ has virtual functions and accessible non-virtual destructor [-Werror=non-virtual-dtor]
+    2 |                              class base {friend f; public: virtual void anchor();protected: ~base();};
+      |                                    ^~~~
+cc1plus: some warnings being treated as errors
+gmake[1]: *** [CMakeFiles/cmTC_e5ba2.dir/build.make:78: CMakeFiles/cmTC_e5ba2.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_e5ba2/fast] Error 2
+
+
+Source file was:
+class f {};
+                             class base {friend f; public: virtual void anchor();protected: ~base();};
+                             int main() { return 0; }
+Performing C SOURCE FILE Test C_WCOMMENT_ALLOWS_LINE_WRAP failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d8cc0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d8cc0.dir/build.make CMakeFiles/cmTC_d8cc0.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d8cc0.dir/src.c.o
+/usr/bin/cc -DC_WCOMMENT_ALLOWS_LINE_WRAP  -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -Wimplicit-fallthrough  -Werror -Wcomment -o CMakeFiles/cmTC_d8cc0.dir/src.c.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.c
+/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.c:1:1: error: multi-line comment [-Werror=comment]
+    1 | // \
+      | ^
+cc1: all warnings being treated as errors
+gmake[1]: *** [CMakeFiles/cmTC_d8cc0.dir/build.make:78: CMakeFiles/cmTC_d8cc0.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d8cc0/fast] Error 2
+
+
+Source file was:
+// \
+//
+int main() {return 0;}
+Performing C SOURCE FILE Test C_SUPPORTS_STRING_CONVERSION_FLAG failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d17a8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d17a8.dir/build.make CMakeFiles/cmTC_d17a8.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d17a8.dir/src.c.o
+/usr/bin/cc -DC_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -Wstring-conversion -o CMakeFiles/cmTC_d17a8.dir/src.c.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command-line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
+gmake[1]: *** [CMakeFiles/cmTC_d17a8.dir/build.make:78: CMakeFiles/cmTC_d17a8.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d17a8/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test CXX_SUPPORTS_STRING_CONVERSION_FLAG failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_31674/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_31674.dir/build.make CMakeFiles/cmTC_31674.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_31674.dir/src.cxx.o
+/usr/bin/c++ -DCXX_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment    -Werror -Wstring-conversion -o CMakeFiles/cmTC_31674.dir/src.cxx.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
+gmake[1]: *** [CMakeFiles/cmTC_31674.dir/build.make:78: CMakeFiles/cmTC_31674.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_31674/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Determining if the os_signpost_interval_begin exist failed with the following output:
+Change Dir: /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cb39e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cb39e.dir/build.make CMakeFiles/cmTC_cb39e.dir/build
+gmake[1]: Entering directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cb39e.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC -fno-semantic-interposition -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -Wmisleading-indentation -ffunction-sections -fdata-sections  -o CMakeFiles/cmTC_cb39e.dir/CheckSymbolExists.c.o -c /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: os/signpost.h: No such file or directory
+    2 | #include <os/signpost.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_cb39e.dir/build.make:78: CMakeFiles/cmTC_cb39e.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_cb39e/fast] Error 2
+
+
+File /home/stevhill/year1/1755/llvm-CIA/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <os/signpost.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef os_signpost_interval_begin
+  return ((int*)(&os_signpost_interval_begin))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

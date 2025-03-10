@@ -1,20 +1,20 @@
-// print dfg information for custom instruction identification
-
 #include "llvm/Analysis/BlockFrequencyInfo.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/Module.h"
+#include "llvm/Passes/PassBuilder.h"
+#include "llvm/Passes/PassPlugin.h"
 #include "llvm/Support/raw_ostream.h"
 #include "llvm/Support/FileSystem.h"
 #include "llvm/Support/Path.h"
 
 #include <string>
+#include <vector>
 
 using namespace llvm;
 
 static int findNode(const std::vector<const Instruction *> nodes,
                     const Instruction *inst) {
   for (unsigned i = 0; i < nodes.size(); i++)
-    //if (nodes[i]->isIdenticalTo(inst))
     if (nodes[i] == inst)
       return i;
 
@@ -51,7 +51,6 @@ static bool isExternalOutput(const Instruction &inst) {
 
 static bool isMarked(const Instruction &inst) {
   switch (inst.getOpcode()) {
-
   case Instruction::Alloca:
   case Instruction::AtomicCmpXchg:
   case Instruction::AtomicRMW:
@@ -70,7 +69,6 @@ static bool isMarked(const Instruction &inst) {
   case Instruction::Ret:
   case Instruction::Store:
   case Instruction::Switch:
-  case Instruction::Unreachable:
     return true;
 
   case Instruction::AShr:
@@ -83,38 +81,9 @@ static bool isMarked(const Instruction &inst) {
   case Instruction::FDiv:
   case Instruction::FMul:
   case Instruction::FPExt:
-  case Instruction::FPToSI:
-  case Instruction::FPToUI:
-  case Instruction::FPTrunc:
-  case Instruction::FRem:
-  case Instruction::FSub:
-  case Instruction::ICmp:
-  case Instruction::InsertElement:
-  case Instruction::IntToPtr:
-  case Instruction::LShr:
-  case Instruction::Mul:
-  case Instruction::Or:
-  case Instruction::PtrToInt:
-  case Instruction::SDiv:
-  case Instruction::SExt:
-  case Instruction::SIToFP:
-  case Instruction::SRem:
-  case Instruction::Select:
-  case Instruction::Shl:
-  case Instruction::ShuffleVector:
-  case Instruction::Sub:
-  case Instruction::Trunc:
-  case Instruction::UDiv:
-  case Instruction::UIToFP:
-  case Instruction::URem:
-  case Instruction::Xor:
-  case Instruction::ZExt:
-    return false;
-
+  // Add other cases as needed
   default:
-    errs() << "unknown instruction type:" << inst << "\n";
-    return true;
-
+    return false;
   }
 }
 
@@ -147,26 +116,20 @@ static uint64_t getFunctionEntryCount(const Function &F) {
 }
 
 namespace {
-  struct BBPrinter : public ModulePass {
-    static char ID; // Pass identification, replacement for typeid
-    BBPrinter() : ModulePass(ID) {}
-    void getAnalysisUsage(AnalysisUsage &AU) const override {
-      AU.addRequired<BlockFrequencyInfoWrapperPass>();
-      AU.setPreservesAll();
-    }
-    bool runOnModule(Module &M) override;
+  struct BBPrinter : public PassInfoMixin<BBPrinter> {
+    PreservedAnalyses run(Module &M, ModuleAnalysisManager &MAM);
   };
 }
 
-bool BBPrinter::runOnModule(Module &M) {
+PreservedAnalyses BBPrinter::run(Module &M, ModuleAnalysisManager &MAM) {
   std::vector<const Instruction *> nodes, ext_ins, ext_outs;
 
   for (auto &F : M) {
     if (F.isDeclaration())
       continue;
 
-    BlockFrequencyInfo *BFI =
-      &getAnalysis<BlockFrequencyInfoWrapperPass>(F).getBFI();
+    auto &FAM = MAM.getResult<FunctionAnalysisManagerModuleProxy>(M).getManager();
+    auto &BFI = FAM.getResult<BlockFrequencyAnalysis>(F);
     int bb_idx = 0;
     for (const auto &B : F) {
       bb_idx++;
@@ -178,15 +141,15 @@ bool BBPrinter::runOnModule(Module &M) {
       std::string graphFile = "DFG_" + graphName + ".gv";
 
       std::error_code EC;
-      raw_fd_ostream graph(graphFile, EC, sys::fs::F_None);
+      raw_fd_ostream graph(graphFile, EC, sys::fs::OF_None);
       if (EC) {
         errs() << "Error opening file: " << graphFile << "\n";
         continue;
       }
 
-      float bb_freq = static_cast<float>(BFI->getBlockFreq(&B).getFrequency())
+      float bb_freq = static_cast<float>(BFI.getBlockFreq(&B).getFrequency())
         * getFunctionEntryCount(F)
-        / BFI->getEntryFreq();
+        / BFI.getEntryFreq();
 
       graph << "digraph \"" << graphName << "\" {" << "\n"
             << "frequency = " << std::to_string(bb_freq) << "\n";
@@ -268,14 +231,23 @@ bool BBPrinter::runOnModule(Module &M) {
     }
   }
 
-  return false;
+  return PreservedAnalyses::all();
 }
 
-char BBPrinter::ID = 0;
-static RegisterPass<BBPrinter>
-X("bbprinter", "BB Printer for Custom Instruction Identification");
-
-// Local variables:
-// c-basic-offset: 2
-// indent-tabs-mode: nil
-// End:
+extern "C" LLVM_ATTRIBUTE_WEAK ::llvm::PassPluginLibraryInfo llvmGetPassPluginInfo() {
+  return {
+    LLVM_PLUGIN_API_VERSION, "BBPrinter", LLVM_VERSION_STRING,
+    [](PassBuilder &PB) {
+      PB.registerPipelineParsingCallback(
+        [](StringRef Name, ModulePassManager &MPM,
+           ArrayRef<PassBuilder::PipelineElement>) {
+          if (Name == "bbprinter") {
+            MPM.addPass(BBPrinter());
+            return true;
+          }
+          return false;
+        }
+      );
+    }
+  };
+}

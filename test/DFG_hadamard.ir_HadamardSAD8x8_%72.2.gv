@@ -1,0 +1,181 @@
+digraph "hadamard.ir_HadamardSAD8x8_%72.2" {
+frequency = 1.000000
+N0_phi [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N1_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N2_bitcast [weight = 1, forbidden = 0]
+N3_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N4_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N5_bitcast [weight = 1, forbidden = 0]
+N6_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N7_add [weight = 1, forbidden = 0]
+N8_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N9_bitcast [weight = 1, forbidden = 0]
+N10_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N11_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N12_bitcast [weight = 1, forbidden = 0]
+N13_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N14_add [weight = 1, forbidden = 0]
+N15_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N16_bitcast [weight = 1, forbidden = 0]
+N17_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N18_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N19_bitcast [weight = 1, forbidden = 0]
+N20_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N21_add [weight = 1, forbidden = 0]
+N22_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N23_bitcast [weight = 1, forbidden = 0]
+N24_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N25_getelementptr [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N26_bitcast [weight = 1, forbidden = 0]
+N27_load [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N28_add [weight = 1, forbidden = 0]
+N29_sub [weight = 1, forbidden = 0]
+N30_sub [weight = 1, forbidden = 0]
+N31_sub [weight = 1, forbidden = 0]
+N32_sub [weight = 1, forbidden = 0]
+N33_add [weight = 1, forbidden = 0]
+N34_add [weight = 1, forbidden = 0]
+N35_sub [weight = 1, forbidden = 0]
+N36_sub [weight = 1, forbidden = 0]
+N37_add [weight = 1, forbidden = 0]
+N38_add [weight = 1, forbidden = 0]
+N39_sub [weight = 1, forbidden = 0]
+N40_sub [weight = 1, forbidden = 0]
+N41_add [weight = 1, forbidden = 0]
+N42_bitcast [weight = 1, forbidden = 0]
+N43_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N44_sub [weight = 1, forbidden = 0]
+N45_bitcast [weight = 1, forbidden = 0]
+N46_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N47_add [weight = 1, forbidden = 0]
+N48_bitcast [weight = 1, forbidden = 0]
+N49_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N50_sub [weight = 1, forbidden = 0]
+N51_bitcast [weight = 1, forbidden = 0]
+N52_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N53_add [weight = 1, forbidden = 0]
+N54_bitcast [weight = 1, forbidden = 0]
+N55_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N56_sub [weight = 1, forbidden = 0]
+N57_bitcast [weight = 1, forbidden = 0]
+N58_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N59_add [weight = 1, forbidden = 0]
+N60_bitcast [weight = 1, forbidden = 0]
+N61_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N62_sub [weight = 1, forbidden = 0]
+N63_bitcast [weight = 1, forbidden = 0]
+N64_store [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N65_add [weight = 1, forbidden = 0]
+N66_icmp [weight = 1, forbidden = 0]
+N67_br [weight = 1, forbidden = 1, style = filled, fillcolor = red]
+N0_phi -> N65_add [color = red];
+N0_phi -> N25_getelementptr [color = red];
+N0_phi -> N22_getelementptr [color = red];
+N0_phi -> N18_getelementptr [color = red];
+N0_phi -> N15_getelementptr [color = red];
+N0_phi -> N11_getelementptr [color = red];
+N0_phi -> N8_getelementptr [color = red];
+N0_phi -> N4_getelementptr [color = red];
+N0_phi -> N1_getelementptr [color = red];
+N1_getelementptr -> N42_bitcast [color = red];
+N1_getelementptr -> N2_bitcast [color = red];
+N2_bitcast -> N3_load;
+N3_load -> N29_sub [color = red];
+N3_load -> N7_add [color = red];
+N4_getelementptr -> N54_bitcast [color = red];
+N4_getelementptr -> N5_bitcast [color = red];
+N5_bitcast -> N6_load;
+N6_load -> N29_sub [color = red];
+N6_load -> N7_add [color = red];
+N7_add -> N35_sub;
+N7_add -> N33_add;
+N8_getelementptr -> N45_bitcast [color = red];
+N8_getelementptr -> N9_bitcast [color = red];
+N9_bitcast -> N10_load;
+N10_load -> N30_sub [color = red];
+N10_load -> N14_add [color = red];
+N11_getelementptr -> N57_bitcast [color = red];
+N11_getelementptr -> N12_bitcast [color = red];
+N12_bitcast -> N13_load;
+N13_load -> N30_sub [color = red];
+N13_load -> N14_add [color = red];
+N14_add -> N36_sub;
+N14_add -> N34_add;
+N15_getelementptr -> N48_bitcast [color = red];
+N15_getelementptr -> N16_bitcast [color = red];
+N16_bitcast -> N17_load;
+N17_load -> N31_sub [color = red];
+N17_load -> N21_add [color = red];
+N18_getelementptr -> N60_bitcast [color = red];
+N18_getelementptr -> N19_bitcast [color = red];
+N19_bitcast -> N20_load;
+N20_load -> N31_sub [color = red];
+N20_load -> N21_add [color = red];
+N21_add -> N35_sub;
+N21_add -> N33_add;
+N22_getelementptr -> N51_bitcast [color = red];
+N22_getelementptr -> N23_bitcast [color = red];
+N23_bitcast -> N24_load;
+N24_load -> N32_sub [color = red];
+N24_load -> N28_add [color = red];
+N25_getelementptr -> N63_bitcast [color = red];
+N25_getelementptr -> N26_bitcast [color = red];
+N26_bitcast -> N27_load;
+N27_load -> N32_sub [color = red];
+N27_load -> N28_add [color = red];
+N28_add -> N36_sub;
+N28_add -> N34_add;
+N29_sub -> N39_sub;
+N29_sub -> N37_add;
+N30_sub -> N40_sub;
+N30_sub -> N38_add;
+N31_sub -> N39_sub;
+N31_sub -> N37_add;
+N32_sub -> N40_sub;
+N32_sub -> N38_add;
+N33_add -> N44_sub;
+N33_add -> N41_add;
+N34_add -> N44_sub;
+N34_add -> N41_add;
+N35_sub -> N50_sub;
+N35_sub -> N47_add;
+N36_sub -> N50_sub;
+N36_sub -> N47_add;
+N37_add -> N56_sub;
+N37_add -> N53_add;
+N38_add -> N56_sub;
+N38_add -> N53_add;
+N39_sub -> N62_sub;
+N39_sub -> N59_add;
+N40_sub -> N62_sub;
+N40_sub -> N59_add;
+N41_add -> N43_store;
+N42_bitcast -> N43_store;
+N44_sub -> N46_store;
+N45_bitcast -> N46_store;
+N47_add -> N49_store;
+N48_bitcast -> N49_store;
+N50_sub -> N52_store;
+N51_bitcast -> N52_store;
+N53_add -> N55_store;
+N54_bitcast -> N55_store;
+N56_sub -> N58_store;
+N57_bitcast -> N58_store;
+N59_add -> N61_store;
+N60_bitcast -> N61_store;
+N62_sub -> N64_store;
+N63_bitcast -> N64_store;
+N65_add -> N66_icmp;
+N66_icmp -> N67_br;
+ExtIn0_alloca[style = filled, fillcolor = blue]
+ExtIn0_alloca -> N25_alloca [color = blue];
+ExtIn0_alloca -> N22_alloca [color = blue];
+ExtIn0_alloca -> N18_alloca [color = blue];
+ExtIn0_alloca -> N15_alloca [color = blue];
+ExtIn0_alloca -> N11_alloca [color = blue];
+ExtIn0_alloca -> N8_alloca [color = blue];
+ExtIn0_alloca -> N4_alloca [color = blue];
+ExtIn0_alloca -> N1_alloca [color = blue];
+ExtOut0 [style = filled, fillcolor = blue]
+N65_add -> ExtOut0 [color = blue];
+}
